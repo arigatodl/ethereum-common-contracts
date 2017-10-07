@@ -1,4 +1,4 @@
-var Owned: artifacts.require("../contracts/Owned.sol");
+var Owned = artifacts.require("../contracts/Owned.sol");
 
 contract('Owned', function(accounts) {
     let owned;
