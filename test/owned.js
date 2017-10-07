@@ -33,9 +33,9 @@ contract('Owned', function(accounts) {
                 return owned.setOwner(other, {from: owner});
             })
             .then(txn => {
-                assert.strictEqual(tx.receipt.logs.length, 1);
-                assert.strictEqual(tx.logs.length, 1);
-                const logChanged = tx.logs[0];
+                assert.strictEqual(txn.receipt.logs.length, 1);
+                assert.strictEqual(txn.logs.length, 1);
+                const logChanged = txn.logs[0];
                 assert.strictEqual(logChanged.event, "LogOwnerSet");
                 assert.strictEqual(logChanged.args.previousOwner, owner);
                 assert.strictEqual(logChanged.args.newOwner, other);
