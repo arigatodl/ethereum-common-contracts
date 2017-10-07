@@ -25,5 +25,5 @@
   "devDependencies": {
     "coveralls": "^2.13.1",
     "solidity-coverage": "https://github.com/sc-forks/solidity-coverage.git"
-  },
+  }
 }
