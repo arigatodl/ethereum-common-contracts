@@ -1,0 +1,24 @@
+{
+  "name": "solidity-helper",
+  "version": "1.0.0",
+  "description": "Common contracts, libraries and templates for Solidity development",
+  "scripts": {
+    "test": "scripts/test.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dulguunbatmunkh/solidity-helper.git"
+  },
+  "keywords": [
+    "solidity",
+    "ethereum",
+    "smart",
+    "contracts"
+  ],
+  "author": "Dulguun Batmunkh <dulguunbatmunkh@gmail.com>",
+  "license": "GNU v3",
+  "bugs": {
+    "url": "https://github.com/dulguunbatmunkh/solidity-helper/issues"
+  },
+  "homepage": "https://github.com/dulguunbatmunkh/solidity-helper"
+}
