@@ -12,7 +12,7 @@ contract('Owned', function(accounts) {
 
     beforeEach("should deploy a new contract", function() {
         return Owned.new({from: owner})
-            .then(instance => owned = instance;)
+            .then(instance => owned = instance);
     });
 
     it('should have correct initial owner', function() {
@@ -23,7 +23,7 @@ contract('Owned', function(accounts) {
             })
             .then(owner_ => {
                 assert.isEqual(owner, owner_);
-            })
+            });
     });
 
     it('should change owner after setOwner',  function() {
@@ -44,7 +44,7 @@ contract('Owned', function(accounts) {
             .then(owner_ => assert.isEqual(owner_, other));
     });
 
-    it('should prevent non-owners from changing owner', function() {
+    it('should prevent non-owners from changing owner', async function() {
         const owner_ = await owned.owner.call();
         assert.isTrue(owner !== other);
         try {
