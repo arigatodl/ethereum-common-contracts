@@ -1,0 +1,14 @@
+dist: trusty
+sudo: required
+group: beta
+language: node_js
+node_js:
+  - "6"
+cache:
+  yarn: true
+env:
+  -
+matrix:
+  fast_finish: true
+script:
+  - yarn test
