@@ -18,19 +18,19 @@ contract('Owned', function(accounts) {
     it('should have correct initial owner', function() {
         return owned.owner({from: owner})
             .then(owner_ => {
-                assert.isEqual(owner, owner_);
+                assert.equal(owner, owner_);
                 return owned.owner({from: other}); // accessible from non-owner account
             })
             .then(owner_ => {
-                assert.isEqual(owner, owner_);
+                assert.equal(owner, owner_);
             });
     });
 
     it('should change owner after setOwner',  function() {
-        return owned.setOwner.call(owner1, {from: owner})
+        return owned.setOwner.call(other, {from: owner})
             .then(success => {
                 assert.isTrue(success);
-                return owned.setOwner(owner1, {from: owner});
+                return owned.setOwner(other, {from: owner});
             })
             .then(txn => {
                 assert.strictEqual(tx.receipt.logs.length, 1);
@@ -41,7 +41,7 @@ contract('Owned', function(accounts) {
                 assert.strictEqual(logChanged.args.newOwner, other);
                 return owned.owner();
             })
-            .then(owner_ => assert.isEqual(owner_, other));
+            .then(owner_ => assert.equal(owner_, other));
     });
 
     it('should prevent non-owners from changing owner', async function() {
@@ -51,7 +51,7 @@ contract('Owned', function(accounts) {
             await owned.setOwner(other, {from: other});
             assert.fail('should have thrown before');
         } catch(error) {
-            assertJump(error);
+            console.log(error);
         }
     });
 });
