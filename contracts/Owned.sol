@@ -18,7 +18,7 @@ contract Owned {
         require(newOwner != address(0));
 
         LogOwnerSet(owner, newOwner);
-        owner = newOwner
+        owner = newOwner;
 
         return true;
     }
