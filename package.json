@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "Common contracts, libraries and templates for Solidity development",
   "scripts": {
-    "test": "truffle test"
+    "test": "truffle test",
+    "coverage": "./node_modules/.bin/solidity-coverage"
   },
   "repository": {
     "type": "git",
